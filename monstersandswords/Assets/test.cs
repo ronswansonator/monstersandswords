@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class test : MonoBehaviour {
     public GameObject testRef;
+	public int test1 = 5;
 
 	// Use this for initialization
 	void Start () {
