@@ -34,3 +34,4 @@ sysinfo.txt
 *.unitypackage
 /monstersandswords/Library/
 /monstersandswords/Temp/
+/monstersandswords/.vs/
