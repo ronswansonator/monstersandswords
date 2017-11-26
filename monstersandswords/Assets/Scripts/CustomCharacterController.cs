@@ -6,16 +6,19 @@ using UnityEngine;
 public class CustomCharacterController : MonoBehaviour
 {
     private CharacterMotor _motor;
+    public Weapon CurrWeapon;
 
-    public float AttackRange = .75f;
-    public float AttackRadius = .5f;
-
-    void Awake()
+    private void Awake()
     {
         _motor = GetComponent<CharacterMotor>();
     }
 
-    void Update()
+    private void Start()
+    {
+        UpdateCursorState(true); 
+    }
+
+    private void Update()
     {
         HandleMovement();
         HandleAttack();
@@ -46,24 +49,18 @@ public class CustomCharacterController : MonoBehaviour
 
     void HandleAttack()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (CurrWeapon)
         {
-            Collider[] hits = Physics.OverlapSphere(transform.position + transform.forward * AttackRange, AttackRadius);
-            foreach (Collider hit in hits)
+            if (Input.GetMouseButtonDown(0))
             {
-                if( hit.gameObject.tag == "Enemy")
-                {
-                    Destroy(hit.gameObject);
-                }
+                CurrWeapon.Attack();
             }
         }
     }
 
-    private void OnDrawGizmosSelected()
+    void UpdateCursorState(bool playing)
     {
-        Color temp = Gizmos.color;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + transform.forward * AttackRange, AttackRadius);
-        Gizmos.color = temp;
+        Cursor.lockState = playing ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !playing;
     }
 }
