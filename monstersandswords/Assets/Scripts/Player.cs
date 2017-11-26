@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int Health = 3;
+    public int MaxHealth = 3;
     private int _currentHealth = 3;
 
     private void Awake()
     {
-        _currentHealth = Health;
+        _currentHealth = MaxHealth;
+    }
+
+    public void Heal(int healAmount)
+    {
+        _currentHealth += healAmount;
+        _currentHealth = _currentHealth > MaxHealth ? MaxHealth : _currentHealth; // Clamps to max health to prevent over-healing
     }
 
     public void TakeDamage(int damageAmount)
