@@ -10,7 +10,14 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: FloorPanel01_3x3_Dungeon01
+    4300002: FloorPanel01_3x3_Dungeon01_LP
+    6400000: //RootNode
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #4'
+    second: {fileID: 2100000, guid: ab0034eba61fc6e4cb4c038549e5b5b8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

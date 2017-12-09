@@ -10,7 +10,13 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: WallBox_Doorway01_3x3_Dungeon01
+    4300002: WallBox_01_Doorway_01_LP
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallBox_01_Doorway_01_MAT
+    second: {fileID: 2100000, guid: 9c317dc7006a62344a12f5715b8f32cd, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

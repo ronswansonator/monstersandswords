@@ -10,7 +10,13 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: WallDivider01_Dungeon01
+    4300002: WallDivider_01_LP
   externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WallDivider_01_MAT
+    second: {fileID: 2100000, guid: d8aab9c116bc4e047b5e072eed2f85b3, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
