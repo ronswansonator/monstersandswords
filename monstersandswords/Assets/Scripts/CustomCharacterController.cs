@@ -20,8 +20,12 @@ public class CustomCharacterController : MonoBehaviour
 
     private void Update()
     {
-        HandleMovement();
         HandleAttack();
+    }
+
+    private void FixedUpdate()
+    {
+        HandleMovement();
     }
 
     void HandleMovement()
@@ -44,7 +48,7 @@ public class CustomCharacterController : MonoBehaviour
             dirToMove += transform.right.ToVec2XZ();
         }
 
-        _motor.Move(dirToMove * Time.deltaTime);
+        _motor.Move(dirToMove * Time.fixedDeltaTime);
     }
 
     void HandleAttack()
