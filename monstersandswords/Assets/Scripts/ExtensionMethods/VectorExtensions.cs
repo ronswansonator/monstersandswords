@@ -48,4 +48,9 @@ public static class VectorExtensions
     {
         return new Vector3(x, src.x, src.y);
     }
+
+    public static bool IsFuzzyZero(this Vector2 src)
+    {
+        return Mathf.Abs(src.magnitude) < .0001f;
+    }
 }
