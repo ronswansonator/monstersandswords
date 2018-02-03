@@ -24,11 +24,7 @@ public class CustomCharacterController : MonoBehaviour
         _dashTimer = DashCoolDown;
     }
 
-    private void Start()
-    {
-        UpdateCursorState(true); 
-    }
-
+    
     private void Update()
     {
         HandleAttack();
@@ -117,11 +113,5 @@ public class CustomCharacterController : MonoBehaviour
                 CurrWeapon.Attack();
             }
         }
-    }
-
-    void UpdateCursorState(bool playing)
-    {
-        Cursor.lockState = playing ? CursorLockMode.Locked : CursorLockMode.None;
-        Cursor.visible = !playing;
     }
 }

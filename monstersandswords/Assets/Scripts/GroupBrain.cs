@@ -25,17 +25,17 @@ public class GroupBrain : MonoBehaviour
 
     private void Update()
     {
-        
     }
 
-    public float TacticalRingRadius = 10.0f;
+    public float TacticalRingRadius = 5.0f;
     public void OnEnemyActive(Enemy target)
     {
         _enemies.Add(target);
-        if (_enemies.Count > 1)
-        {
+        //if (_enemies.Count > 1)
+        //{
             target.MoveTowardsPlayer = true;
-        }
+           
+        //}
     }
     public void OnEnemeyInactive(Enemy target)
     {
@@ -44,5 +44,9 @@ public class GroupBrain : MonoBehaviour
     public void SetPlayer(Player p)
     {
         _player = p;
+    }
+    public Vector2 GetClosestCirclePoint(Vector2 origin, Vector2 testPoint)
+    {
+        return (testPoint - origin).normalized * TacticalRingRadius + origin;
     }
 }

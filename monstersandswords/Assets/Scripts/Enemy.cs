@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Linq;
+
 [RequireComponent(typeof(NavMeshAgent))]
 public class Enemy : MonoBehaviour
 {
@@ -27,9 +28,13 @@ public class Enemy : MonoBehaviour
     private void Update()
     {
         // Feel like setting the destination every frame is bad, need to look more into if this is ok
-        if (MoveTowardsPlayer && destination.HasValue)
+        if (MoveTowardsPlayer && GroupBrain.Instance.Player != null)  //&& destination.HasValue)
         {
-            _agent.SetDestination(GroupBrain.Instance.Player.transform.position);
+            _agent.SetDestination(GroupBrain.Instance.GetClosestCirclePoint(GroupBrain.Instance.Player.transform.position.ToVec2XZ(), transform.position.ToVec2XZ()).ToVec3XZ());
+        }
+        if(_agent.remainingDistance < 2.0f)
+        {
+            Attack();
         }
     }
 
@@ -55,9 +60,5 @@ public class Enemy : MonoBehaviour
             GroupBrain.Instance.Player.TakeDamage(AttackDamage);
         }
 
-    }
-    private void OnCollisionEnter(Collision collision)
-    {
-        Attack();
     }
 }

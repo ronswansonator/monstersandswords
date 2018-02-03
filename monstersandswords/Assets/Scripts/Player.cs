@@ -30,6 +30,13 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject); // TODO: Go to death screen
+        Camera.main.transform.parent = null;
+        Destroy(Camera.main.GetComponent<RotateWithMouse>());
+        foreach(Transform child in Camera.main.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        Destroy(gameObject);
+        GameManager.Instance.GameOver();
     }
 }
