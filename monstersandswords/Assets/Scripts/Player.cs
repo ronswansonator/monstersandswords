@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         _currentHealth = MaxHealth;
+        GroupBrain.Instance.SetPlayer(this);
     }
 
     public void Heal(int healAmount)
