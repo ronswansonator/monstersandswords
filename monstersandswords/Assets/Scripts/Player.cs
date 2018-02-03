@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         _currentHealth -= damageAmount;
+        UIManager.Instance.TakeDamage();
         if( _currentHealth <= 0)
         {
             Die();
@@ -30,6 +31,7 @@ public class Player : MonoBehaviour
 
     public void Die()
     {
+        UIManager.Instance.TurnOffDamage();
         Camera.main.transform.parent = null;
         Destroy(Camera.main.GetComponent<RotateWithMouse>());
         foreach(Transform child in Camera.main.transform)

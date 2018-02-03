@@ -16,5 +16,16 @@ public class UIManager : MonoBehaviour
     {
         _instance = this;
     }
+    public void TakeDamage()
+    {
+        DamageTaken.SetActive(true);
+        Invoke("TurnOffDamage", .25f);
+    }
+    public void TurnOffDamage()
+    {
+        DamageTaken.SetActive(false);
+    }
+
     public GameObject GameOver;
+    public GameObject DamageTaken;
 }

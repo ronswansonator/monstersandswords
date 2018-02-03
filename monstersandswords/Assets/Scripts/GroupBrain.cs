@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class GroupBrain : MonoBehaviour
+public class GroupBrain
 {
     private static GroupBrain _instance = null;
     public static GroupBrain Instance
@@ -12,9 +12,7 @@ public class GroupBrain : MonoBehaviour
         {
             if (_instance == null)
             {
-                GameObject g = new GameObject("GroupBrain");
-                _instance = g.AddComponent<GroupBrain>();
-                DontDestroyOnLoad(g);
+                _instance = new GroupBrain();
             }
             return _instance;
         }
@@ -22,12 +20,43 @@ public class GroupBrain : MonoBehaviour
     private Player _player = null;
     public Player Player { get { return _player; }}
     private List<Enemy> _enemies = new List<Enemy>();
-
-    private void Update()
+    private float AttackRange = 2.0f;
+    public void Update()
     {
+        if (_player != null)
+        {
+            foreach (var enemy in _enemies)
+            {
+                if (IsEnemyInRadius(enemy))
+                {
+                    enemy.destination = _player.transform.position;
+                    if (DistanceBetweenEnemeyAndPlayer(enemy) <= AttackRange)
+                    {
+                        enemy.Attack();
+                    }
+                }
+                else
+                {
+                    enemy.destination = GetClosestCirclePoint(_player.transform.position.ToVec2XZ(), enemy.transform.position.ToVec2XZ()).ToVec3XZ();
+                }
+            }
+        }
     }
 
     public float TacticalRingRadius = 5.0f;
+    public bool IsEnemyInRadius(Enemy e)
+    {
+        return DistanceBetweenEnemeyAndPlayer(e) < TacticalRingRadius * TacticalRingRadius;
+    }
+    public float DistanceBetweenEnemeyAndPlayer(Enemy e)
+    {
+        if (_player != null && e != null)
+        {
+            return Vector3.SqrMagnitude(e.transform.position - _player.transform.position);
+        }
+        return -1;
+    }
+
     public void OnEnemyActive(Enemy target)
     {
         _enemies.Add(target);
