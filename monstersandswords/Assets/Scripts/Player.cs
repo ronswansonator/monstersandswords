@@ -21,6 +21,8 @@ public class Player : MonoBehaviour
     {
         _currentHealth += healAmount;
         _currentHealth = _currentHealth > MaxHealth ? MaxHealth : _currentHealth; // Clamps to max health to prevent over-healing
+
+        UIManager.Instance.UpdateHealth();
     }
 
     public void TakeDamage(int damageAmount)

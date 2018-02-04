@@ -15,40 +15,34 @@ public class Enemy : MonoBehaviour
     public float AttackRange = 2.0f;
     public Vector3? destination = null;
     private float _lastAttackTime = 0;
-    public float AttackCooldownTime = 2.0f;
+    public float AttackCooldownTime = 1.0f;
+    bool _isAttacking = false;
+    public bool IsAttacking => _isAttacking;
+    public float AttackBoostSpeed = 2.0f;
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
         _currHealth = MaxHealth;
         GroupBrain.Instance.OnEnemyActive(this);
     }
-
-    private void Start()
-    {
-    }
-
     private void Update()
     {
+        if (GetComponent<MeshRenderer>().material.color != Color.green)
+        {
+            if (IsAttacking)
+            {
+                GetComponent<MeshRenderer>().material.color = Color.black;
+            }
+            else
+            {
+                GetComponent<MeshRenderer>().material.color = Color.red;
+            }
+        }
         // Feel like setting the destination every frame is bad, need to look more into if this is ok
         if (MoveTowardsPlayer && GroupBrain.Instance.Player != null && destination.HasValue)
         {
             _agent.SetDestination(destination.Value);
         }
-    }
-
-    public void TakeDamage(int damageAmount)
-    {
-        _currHealth -= damageAmount;
-        if (_currHealth <= 0)
-        {
-            Die();
-        }
-    }
-
-    public void Die()
-    {
-        GroupBrain.Instance.OnEnemeyInactive(this);
-        Destroy(gameObject); // just destroy self for now
     }
     public void OnDestroy()
     {
@@ -65,5 +59,49 @@ public class Enemy : MonoBehaviour
             }
             _lastAttackTime = Time.time;
         }
+    }
+
+    public bool CanAttack()
+    {
+        return (Time.time - _lastAttackTime) > AttackCooldownTime;
+    }
+    public void SetAttack(bool isAttack)
+    {
+        if (_isAttacking != isAttack)
+        {
+            if (isAttack)
+            {
+                _agent.speed += AttackBoostSpeed;
+            }
+            else
+            {
+                _agent.speed -= AttackBoostSpeed;
+            }
+            _isAttacking = isAttack;
+        }
+    }
+    public void ChangeColor()//Just for testing
+    {
+        GetComponent<MeshRenderer>().material.color = Color.green;
+    }
+    public void ChangeColorBack()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.red;
+    }
+    public void TakeDamage(int damageAmount)
+    {
+        ChangeColor();
+        Invoke("ChangeColorBack", .25f);
+        _currHealth -= damageAmount;
+        if (_currHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        GroupBrain.Instance.OnEnemeyInactive(this);
+        Destroy(gameObject); // just destroy self for now
     }
 }

@@ -114,6 +114,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 3
   AttackDamage: 1
+  MoveTowardsPlayer: 0
+  AttackRange: 2
+  AttackCooldownTime: 2
+  AttackBoostSpeed: 2
 --- !u!136 &136869499714478022
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -136,7 +140,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.49999997
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

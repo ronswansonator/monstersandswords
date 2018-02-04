@@ -23,7 +23,7 @@ public class Weapon : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if( other.tag == "Enemy" )
+        if( other.tag == "Enemy" && _anim.isPlaying)
         {
             other.gameObject.GetComponent<Enemy>()?.TakeDamage(DamageAmount);
         }

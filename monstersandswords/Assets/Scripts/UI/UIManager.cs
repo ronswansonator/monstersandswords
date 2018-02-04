@@ -23,7 +23,7 @@ public class UIManager : MonoBehaviour
     }
     public void TakeDamage()
     {
-        Health.UpdatePlayerHealth();
+        UpdateHealth();
         DamageTaken.SetActive(true);
         Invoke("TurnOffDamage", .25f);
     }
@@ -34,6 +34,10 @@ public class UIManager : MonoBehaviour
     public void SetPlayer(Player p)
     {
         _player = p;
+        Health.UpdatePlayerHealth();
+    }
+    public void UpdateHealth()
+    {
         Health.UpdatePlayerHealth();
     }
 

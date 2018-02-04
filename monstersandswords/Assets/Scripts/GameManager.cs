@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         _instance = this;
+        GroupBrain.Instance.SceneInit();
     }
     // Use this for initialization
     void Start()
