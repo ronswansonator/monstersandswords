@@ -12,6 +12,10 @@ public class Player : MonoBehaviour
         _currentHealth = MaxHealth;
         GroupBrain.Instance.SetPlayer(this);
     }
+    private void Start()
+    {
+        UIManager.Instance.SetPlayer(this);
+    }
 
     public void Heal(int healAmount)
     {
@@ -40,5 +44,9 @@ public class Player : MonoBehaviour
         }
         Destroy(gameObject);
         GameManager.Instance.GameOver();
+    }
+    public int GetHealth()
+    {
+        return _currentHealth;
     }
 }

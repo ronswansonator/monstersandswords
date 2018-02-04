@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class CustomCharacterController : MonoBehaviour
 {
-    public Weapon CurrWeapon;
+    public Weapon[] Weapons;
+    public int CurrWeapon = 0;
 
     public float MoveSpeed = 10.0f;
     Rigidbody _rigidbody;
@@ -23,8 +25,11 @@ public class CustomCharacterController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _dashTimer = DashCoolDown;
     }
+    private void Start()
+    {
+        ChangeWeapon(CurrWeapon);
+    }
 
-    
     private void Update()
     {
         HandleAttack();
@@ -106,12 +111,18 @@ public class CustomCharacterController : MonoBehaviour
 
     void HandleAttack()
     {
-        if (CurrWeapon)
+        if (Weapons[CurrWeapon])
         {
             if (Input.GetMouseButtonDown(0))
             {
-                CurrWeapon.Attack();
+                Weapons[CurrWeapon].Attack();
             }
         }
+    }
+    void ChangeWeapon(int newWeapon)
+    {
+        Weapons[CurrWeapon].gameObject.SetActive(false);
+        Weapons[newWeapon].gameObject.SetActive(true);
+        CurrWeapon = newWeapon;
     }
 }

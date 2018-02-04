@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject GameOver;
+    public GameObject DamageTaken;
+    private Player _player = null;
+    public Player Player { get { return _player; } }
+    public UIHealth Health;
     private static UIManager _instance = null;
     public static UIManager Instance
     {
@@ -18,6 +23,7 @@ public class UIManager : MonoBehaviour
     }
     public void TakeDamage()
     {
+        Health.UpdatePlayerHealth();
         DamageTaken.SetActive(true);
         Invoke("TurnOffDamage", .25f);
     }
@@ -25,7 +31,11 @@ public class UIManager : MonoBehaviour
     {
         DamageTaken.SetActive(false);
     }
+    public void SetPlayer(Player p)
+    {
+        _player = p;
+        Health.UpdatePlayerHealth();
+    }
 
-    public GameObject GameOver;
-    public GameObject DamageTaken;
+
 }
