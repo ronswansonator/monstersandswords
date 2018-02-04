@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 1a823617551c9494e9c5e9738f04e88d
+timeCreated: 1517736042
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Bone_Forearm_L
+    100002: Bone_Forearm_R
+    100004: Bone_Index_01_L
+    100006: Bone_Index_01_R
+    100008: Bone_Index_02_L
+    100010: Bone_Index_02_R
+    100012: Bone_Index_03_L
+    100014: Bone_Index_03_R
+    100016: Bone_Index_04_L
+    100018: Bone_Index_04_R
+    100020: Bone_Middle_01_L
+    100022: Bone_Middle_01_R
+    100024: Bone_Middle_02_L
+    100026: Bone_Middle_02_R
+    100028: Bone_Middle_03_L
+    100030: Bone_Middle_03_R
+    100032: Bone_Middle_04_L
+    100034: Bone_Middle_04_R
+    100036: Bone_Pinky_01_L
+    100038: Bone_Pinky_01_R
+    100040: Bone_Pinky_02_L
+    100042: Bone_Pinky_02_R
+    100044: Bone_Pinky_03_L
+    100046: Bone_Pinky_03_R
+    100048: Bone_Pinky_04_L
+    100050: Bone_Pinky_04_R
+    100052: Bone_Ring_01_L
+    100054: Bone_Ring_01_R
+    100056: Bone_Ring_02_L
+    100058: Bone_Ring_02_R
+    100060: Bone_Ring_03_L
+    100062: Bone_Ring_03_R
+    100064: Bone_Ring_04_L
+    100066: Bone_Ring_04_R
+    100068: Bone_Thumb_01_L
+    100070: Bone_Thumb_01_R
+    100072: Bone_Thumb_02_L
+    100074: Bone_Thumb_02_R
+    100076: Bone_Thumb_03_L
+    100078: Bone_Thumb_03_R
+    100080: Bone_Thumb_04_L
+    100082: Bone_Thumb_04_R
+    100084: Bone_Upperarm_L
+    100086: Bone_Upperarm_R
+    100088: Bone_Wrist_L
+    100090: Bone_Wrist_R
+    100092: End_Index_L
+    100094: End_Index_R
+    100096: End_Middle_L
+    100098: End_Middle_R
+    100100: End_Pinky_L
+    100102: End_Pinky_R
+    100104: End_Ring_L
+    100106: End_Ring_R
+    100108: End_Thumb_L
+    100110: End_Thumb_R
+    100112: LHand_IK_CTRL
+    100114: LHand_IKGoal
+    100116: //RootNode
+    100118: R_HandIKGoal
+    100120: RHand_IK_CTRL
+    100122: Sword_Position_01
+    100124: Arms
+    400000: Bone_Forearm_L
+    400002: Bone_Forearm_R
+    400004: Bone_Index_01_L
+    400006: Bone_Index_01_R
+    400008: Bone_Index_02_L
+    400010: Bone_Index_02_R
+    400012: Bone_Index_03_L
+    400014: Bone_Index_03_R
+    400016: Bone_Index_04_L
+    400018: Bone_Index_04_R
+    400020: Bone_Middle_01_L
+    400022: Bone_Middle_01_R
+    400024: Bone_Middle_02_L
+    400026: Bone_Middle_02_R
+    400028: Bone_Middle_03_L
+    400030: Bone_Middle_03_R
+    400032: Bone_Middle_04_L
+    400034: Bone_Middle_04_R
+    400036: Bone_Pinky_01_L
+    400038: Bone_Pinky_01_R
+    400040: Bone_Pinky_02_L
+    400042: Bone_Pinky_02_R
+    400044: Bone_Pinky_03_L
+    400046: Bone_Pinky_03_R
+    400048: Bone_Pinky_04_L
+    400050: Bone_Pinky_04_R
+    400052: Bone_Ring_01_L
+    400054: Bone_Ring_01_R
+    400056: Bone_Ring_02_L
+    400058: Bone_Ring_02_R
+    400060: Bone_Ring_03_L
+    400062: Bone_Ring_03_R
+    400064: Bone_Ring_04_L
+    400066: Bone_Ring_04_R
+    400068: Bone_Thumb_01_L
+    400070: Bone_Thumb_01_R
+    400072: Bone_Thumb_02_L
+    400074: Bone_Thumb_02_R
+    400076: Bone_Thumb_03_L
+    400078: Bone_Thumb_03_R
+    400080: Bone_Thumb_04_L
+    400082: Bone_Thumb_04_R
+    400084: Bone_Upperarm_L
+    400086: Bone_Upperarm_R
+    400088: Bone_Wrist_L
+    400090: Bone_Wrist_R
+    400092: End_Index_L
+    400094: End_Index_R
+    400096: End_Middle_L
+    400098: End_Middle_R
+    400100: End_Pinky_L
+    400102: End_Pinky_R
+    400104: End_Ring_L
+    400106: End_Ring_R
+    400108: End_Thumb_L
+    400110: End_Thumb_R
+    400112: LHand_IK_CTRL
+    400114: LHand_IKGoal
+    400116: //RootNode
+    400118: R_HandIKGoal
+    400120: RHand_IK_CTRL
+    400122: Sword_Position_01
+    400124: Arms
+    2300000: LHand_IK_CTRL
+    2300002: RHand_IK_CTRL
+    2300004: Sword_Position_01
+    3300000: LHand_IK_CTRL
+    3300002: RHand_IK_CTRL
+    3300004: Sword_Position_01
+    4300000: Sword_Position_01
+    4300002: RHand_IK_CTRL
+    4300004: LHand_IK_CTRL
+    4300006: Arms
+    7400000: Arms_Idle
+    7400002: Arms_Attack_Swipe_01
+    7400004: Arms_Attack_Swipe_02
+    9500000: //RootNode
+    13700000: Arms
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #29'
+    second: {fileID: 2100000, guid: d4d9afeef79cddc4e95ff85836fe856c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: 5d1340445e4e84f4d9f9fa0bd4a74f52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sword MAT
+    second: {fileID: 2100000, guid: d4da98025e40215448c06364fbf33441, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Arms_Idle
+      takeName: Take 001
+      firstFrame: 10
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arms_Attack_Swipe_01
+      takeName: Take 001
+      firstFrame: 110
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Arms_Attack_Swipe_02
+      takeName: Take 001
+      firstFrame: 130
+      lastFrame: 145
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
