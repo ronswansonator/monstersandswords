@@ -5,25 +5,17 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public int DamageAmount = 1;
-    public string ClipName = "";
-    Animation _anim; // TODO: Update to mecanim
-
-    private void Start()
-    {
-        _anim = GetComponent<Animation>();
-    }
+    public string TriggerName = "HitRequest";
+    public Animator _anim;
 
     public void Attack()
     {
-        if (!_anim.isPlaying)
-        {
-            _anim.Play(ClipName);
-        }
+        _anim.SetTrigger(TriggerName);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if( other.tag == "Enemy" && _anim.isPlaying)
+        if( other.tag == "Enemy")
         {
             other.gameObject.GetComponent<Enemy>()?.TakeDamage(DamageAmount);
         }
